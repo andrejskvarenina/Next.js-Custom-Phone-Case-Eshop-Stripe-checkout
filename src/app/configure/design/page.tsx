@@ -19,13 +19,19 @@ const Page = async ({ searchParams }: PageProps) => {
     where: { id },
   });
 
-  if(!configuration) {
-    return notFound()
+  if (!configuration) {
+    return notFound();
   }
 
-  const {imageUrl, width, height } = configuration
+  const { imageUrl, width, height } = configuration;
 
-  return <DesignConfigurator configId={configuration.id} imageDimensions={{width, height}} imageUrl={imageUrl}/>
+  return (
+    <DesignConfigurator
+      configId={configuration.id}
+      imageDimensions={{ width, height }}
+      imageUrl={imageUrl}
+    />
+  );
 };
 
 export default Page;
